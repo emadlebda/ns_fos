@@ -51,7 +51,7 @@ class ProductCrudController extends CrudController
 
             // optional width/height if 25px is not ok with you
             'height' => '50px',
-             'width' => '50px',
+            'width' => '50px',
         ]);
         $this->crud->addColumn([
             'name' => 'name', // The db column name
@@ -60,16 +60,18 @@ class ProductCrudController extends CrudController
 
             // optional width/height if 25px is not ok with you
             'height' => '50px',
-             'width' => '50px',
+            'width' => '50px',
         ]);
         $this->crud->addColumn([
             'name' => 'category', // The db column name
-            'label' => "category", // Table column heading
             'type' => 'relationship',
+            'label' => "category", // Table column heading
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'entity' => 'category', // the method that defines the relationship in your Model
 
             // optional width/height if 25px is not ok with you
             'height' => '50px',
-             'width' => '50px',
+            'width' => '50px',
         ]);
         $this->crud->addColumn([
             'name' => 'price', // The db column name
@@ -85,6 +87,49 @@ class ProductCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
+    }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->addColumn([
+            'name' => 'img', // The db column name
+            'label' => "Image", // Table column heading
+            'type' => 'image',
+
+            // OPTIONALS
+            // 'prefix' => 'folder/subfolder/',
+            // image from a different disk (like s3 bucket)
+            // 'disk' => 'disk-name',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'category', // The db column name
+            'type' => 'relationship',
+            'label' => "category", // Table column heading
+            'attribute' => 'name', // foreign key attribute that is shown to user
+            'entity' => 'category', // the method that defines the relationship in your Model
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'price', // The db column name
+            'label' => "Price", // Table column heading
+            'type' => 'number',
+        ]);
     }
 
     /**

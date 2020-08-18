@@ -17,6 +17,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $identifiableAttribute = 'name';
+    public function identifiableAttribute() {
+        // process stuff here
+        return $this->identifiableAttribute;
+    }
     protected $fillable = [
         'name', 'email', 'password',
     ];

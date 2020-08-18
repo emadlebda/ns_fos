@@ -39,14 +39,63 @@ class CategoryCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'img', // The db column name
+            'label' => "Image", // Table column heading
+            'type' => 'image',
 
+            // OPTIONALS
+            // 'prefix' => 'folder/subfolder/',
+            // image from a different disk (like s3 bucket)
+            // 'disk' => 'disk-name',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
     }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->addColumn([
+            'name' => 'img', // The db column name
+            'label' => "Image", // Table column heading
+            'type' => 'image',
+
+            // OPTIONALS
+            // 'prefix' => 'folder/subfolder/',
+            // image from a different disk (like s3 bucket)
+            // 'disk' => 'disk-name',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+    }
+
 
     /**
      * Define what happens when the Create operation is loaded.
@@ -57,9 +106,24 @@ class CategoryCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(CategoryRequest::class);
+        $this->crud->addField([
+            'name' => 'img', // The db column name
+            'label' => "Image", // Table column heading
+            'type' => 'image',
 
-        CRUD::setFromDb(); // fields
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addField([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
 
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\OrderRequest;
+use App\Models\Order;
+use App\Models\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
@@ -40,12 +42,22 @@ class OrderCrudController extends CrudController
     protected function setupListOperation()
     {
         //CRUD::setFromDb(); // columns
-        CRUD::addColumn(['name' => 'user', 'type' => 'relationship', 'label' => 'user']);
+        CRUD::addColumn(
+            [
+                'name' => 'user', // name of relationship method in the model
+                'type' => 'relationship',
+                'label' => 'User', // Table column heading
+                // OPTIONAL
+                'entity' => 'user', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => User::class, // foreign key model
+            ]
+        );
         CRUD::addColumn(['name' => 'restaurant', 'type' => 'relationship', 'label' => 'restaurant']);
+        CRUD::addColumn(['name' => 'user', 'type' => 'relationship', 'label' => 'user']);
         CRUD::addColumn(['name' => 'product', 'type' => 'relationship', 'label' => 'product']);
         CRUD::addColumn(['name' => 'price', 'type' => 'number']);
         CRUD::addColumn(['name' => 'quantity', 'type' => 'number']);
-        CRUD::addColumn(['name' => 'status', 'type' => 'boolean']);
 
 
         /**
@@ -53,6 +65,30 @@ class OrderCrudController extends CrudController
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
+    }
+
+    protected function setupShowOperation()
+    {
+        $this->crud->set('show.setFromDb', false);
+
+
+        // CRUD::setFromDb(); // columns
+        CRUD::addColumn(
+            [
+                'name' => 'user', // name of relationship method in the model
+                'type' => 'relationship',
+                'label' => 'User', // Table column heading
+                // OPTIONAL
+                'entity' => 'user', // the method that defines the relationship in your Model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'model' => User::class, // foreign key model
+            ]
+        );
+        CRUD::addColumn(['name' => 'restaurant', 'type' => 'relationship', 'label' => 'restaurant']);
+        CRUD::addColumn(['name' => 'product', 'type' => 'relationship', 'label' => 'product']);
+        CRUD::addColumn(['name' => 'price', 'type' => 'number']);
+        CRUD::addColumn(['name' => 'quantity', 'type' => 'number']);
+
     }
 
     /**
@@ -86,17 +122,17 @@ class OrderCrudController extends CrudController
         );
         CRUD::addField(
             [  // Select
-                'label' => "product",
-                'type' => 'select',
-                'name' => 'product_id', // the db column for the foreign key
-                'entity' => 'product', // the method that defines the relationship in your Model
-                'attribute' => 'name', // foreign key attribute that is shown to user
+                'type' => "relationship",
+                'name' => 'product',
             ]
         );
         CRUD::addField(['name' => 'quantity', 'type' => 'number']);
-
-
-
+//        $this->crud->create([
+//            'price'=>50.0,
+//            'user_id'=>1,
+//            'restaurant_id'=>1,
+//            'quantity'=>1,
+//        ]);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

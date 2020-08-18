@@ -21,7 +21,7 @@ class RestaurantCrudController extends CrudController
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
-     * 
+     *
      * @return void
      */
     public function setup()
@@ -33,24 +33,68 @@ class RestaurantCrudController extends CrudController
 
     /**
      * Define what happens when the List operation is loaded.
-     * 
+     *
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
      * @return void
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+        $this->crud->addColumn([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'label'=>'categories',
+            'type' => "relationship",
+            'name' => 'categories', // the me
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
-         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
+         */
+    }
+    protected function setupShowOperation()
+    {
+        $this->crud->addColumn([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addColumn([
+            'label'=>'categories',
+            'type' => "relationship",
+            'name' => 'categories', // the me
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+
+        /**
+         * Columns can be defined using the fluent syntax or array syntax:
+         * - CRUD::column('price')->type('number');
+         * - CRUD::addColumn(['name' => 'price', 'type' => 'number']);
          */
     }
 
     /**
      * Define what happens when the Create operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-create
      * @return void
      */
@@ -58,18 +102,39 @@ class RestaurantCrudController extends CrudController
     {
         CRUD::setValidation(RestaurantRequest::class);
 
-        CRUD::setFromDb(); // fields
+        $this->crud->addField([
+            'name' => 'name', // The db column name
+            'label' => "Name", // Table column heading
+            'type' => 'text',
+
+            // optional width/height if 25px is not ok with you
+            'height' => '50px',
+            'width' => '50px',
+        ]);
+        $this->crud->addField([
+            // relationship
+            'type' => "relationship",
+            'name' => 'categories', // the method on your model that defines the relationship
+
+            // OPTIONALS:
+            // 'label' => "Category",
+            // 'attribute' => "name", // foreign key attribute that is shown to user (identifiable attribute)
+            // 'entity' => 'category', // the method that defines the relationship in your Model
+            // 'model' => "App\Models\Category", // foreign key Eloquent model
+            // 'placeholder' => "Select a category", // placeholder for the select2 input
+        ]);
+
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
-         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         * - CRUD::addField(['name' => 'price', 'type' => 'number']));
          */
     }
 
     /**
      * Define what happens when the Update operation is loaded.
-     * 
+     *
      * @see https://backpackforlaravel.com/docs/crud-operation-update
      * @return void
      */

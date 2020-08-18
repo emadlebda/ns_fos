@@ -3,7 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d04159b3-0369-4fb3-8b28-5fadbb9eac0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/OrderCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RestaurantCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RestaurantCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/backpack/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/backpack/base.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_13_082709_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_13_082709_create_orders_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,7 +224,7 @@
       <workItem from="1597318248059" duration="309000" />
       <workItem from="1597593362145" duration="544000" />
       <workItem from="1597735709203" duration="309000" />
-      <workItem from="1597739501784" duration="19000" />
+      <workItem from="1597739501784" duration="4849000" />
     </task>
     <task id="LOCAL-00001" summary="Installing Passport">
       <created>1597305439769</created>
@@ -239,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597315250822</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="models and controllers">
+      <created>1597739564046</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1597739564046</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,17 +301,18 @@
     <MESSAGE value="Installing Passport" />
     <MESSAGE value="dashboard almost done" />
     <MESSAGE value="dashboard almost done 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard almost done 2" />
+    <MESSAGE value="models and controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="models and controllers" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1597313721423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1597313721423" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1597739531575">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1597739562668">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597739531575" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597739562668" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1597308467949">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -313,17 +329,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1597307262429" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1597315256602">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1597739568136">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597315256602" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597739568136" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1597593368353">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1597593368353" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597313008414">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597744252957">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1597313008414" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1597744252957" />
   </component>
 </project>
