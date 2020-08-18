@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="d04159b3-0369-4fb3-8b28-5fadbb9eac0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/backpack/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/backpack/base.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -212,7 +212,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597303815291</updated>
-      <workItem from="1597303816585" duration="11045000" />
+      <workItem from="1597303816585" duration="12548000" />
+      <workItem from="1597318248059" duration="309000" />
+      <workItem from="1597593362145" duration="544000" />
+      <workItem from="1597735709203" duration="309000" />
+      <workItem from="1597739501784" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="Installing Passport">
       <created>1597305439769</created>
@@ -228,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597313490701</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dashboard almost done 2">
+      <created>1597315250822</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1597315250822</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,17 +285,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Installing Passport" />
     <MESSAGE value="dashboard almost done" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard almost done" />
+    <MESSAGE value="dashboard almost done 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard almost done 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser" timestamp="1597313721423">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="48" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1597313721423" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1597313488546">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1597739531575">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597313488546" />
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1597739531575" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1597308467949">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -301,10 +313,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1597307262429" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1597313492110">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1597315256602">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597313492110" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1597315256602" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1597593368353">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1597593368353" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1597313008414">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
